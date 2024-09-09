@@ -5,7 +5,7 @@
 groups = ["default", "note", "test"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:acf7cb4a8475fc245afc24d31ff06e25b07b4460696efea96f037a4cd3215c66"
+content_hash = "sha256:390b530b0d463c41c15ee8a1366308f5ed5f14dd91dc53ab21dcd5432255666f"
 
 [[metadata.targets]]
 requires_python = "==3.11.*"
@@ -1615,6 +1615,15 @@ files = [
 ]
 
 [[package]]
+name = "sklearn"
+version = "0.0.post12"
+summary = ""
+groups = ["default"]
+files = [
+    {file = "sklearn-0.0.post12.tar.gz", hash = "sha256:54cff9e20839b7b202321178228af4d9388bedf78425d9299fd9ee170d68802e"},
+]
+
+[[package]]
 name = "sniffio"
 version = "1.3.1"
 requires_python = ">=3.7"
@@ -1740,7 +1749,6 @@ version = "4.12.2"
 requires_python = ">=3.8"
 summary = "Backported and Experimental Type Hints for Python 3.8+"
 groups = ["note"]
-marker = "python_version < \"3.12\""
 files = [
     {file = "typing_extensions-4.12.2-py3-none-any.whl", hash = "sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d"},
     {file = "typing_extensions-4.12.2.tar.gz", hash = "sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"},
