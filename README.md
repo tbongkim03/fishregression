@@ -82,7 +82,10 @@ B = reg.intercept_ #y 절편, 독립항
 - 직선 그래프에 나타내기
 ```python
 plt.plot(<[시작할X, 마지막X]>, <[시작할y, 마지막y]>, linewidth=3)
+```
+![image](https://github.com/user-attachments/assets/8fe11066-ca3c-4fe7-9098-2dd6848b58c5)
 
 - 문제점 X, y 범위 지정하기 어려움
 
 해결방법 : 시작할 점 == 최소값 min(), 마지막 점 == 최대값 max()
+![image](https://github.com/user-attachments/assets/b4b485f6-19f2-4367-84b3-fc414e03925c)
