@@ -120,3 +120,15 @@ plt.plot(x_values, y_values, color='red')
 sol1에서 np.arange(x_0, x_1)을 이용하여 범위를 지정할 경우
 데이터에 존재하는 최소값을 지나쳐서 반대쪽도 선이 그어지기 때문에 문제 발생
 
+### 0.5.0 cli
+- api/knn.py, api/lr.py
+- linear regression model
+- knn regression model
+
+- result
+
+```bash
+$ sudo docker exec -it fishapi pp
+물고기의 길이를 입력하세요: 40
+🐟 길이 40.0에 무게 876.665인 물고기는 도미로 예측됩니다!
+```
