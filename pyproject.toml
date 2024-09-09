@@ -8,6 +8,7 @@ authors = [
 dependencies = [
     "scikit-learn>=1.5.1",
     "uvicorn[standard]>=0.30.6",
+    "sklearn>=0.0.post12",
 ]
 requires-python = "==3.11.*"
 readme = "README.md"
