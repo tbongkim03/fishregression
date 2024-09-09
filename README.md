@@ -100,19 +100,23 @@ B = lr.coef_[1]
 C = lr.intercept_
 ```
 - 곡선 그래프에 나타내기
-- sol1
+- **sol1**
 ```python
 points = np.arange(0,51)
 plt.plot(points, (A * points**2) + (B * points) + C, color="red")
 ```
-- sol2
+![image](https://github.com/user-attachments/assets/62e0e918-5898-4ec1-b6be-3a53281d59af)
+
+- **sol2**
 ```python
 x_values = np.linspace(min(train_input), max(train_input), 100)
 y_values = A * x_values ** 2 + B * x_values + C
 plt.plot(x_values, y_values, color='red')
 ```
+![image](https://github.com/user-attachments/assets/e995551b-482f-493a-be7f-7eb0064ddd43)
+
 - 문제점 
 
-np.arange(x_0, x_1)을 이용하여 범위를 지정할 경우
+sol1에서 np.arange(x_0, x_1)을 이용하여 범위를 지정할 경우
 데이터에 존재하는 최소값을 지나쳐서 반대쪽도 선이 그어지기 때문에 문제 발생
 
