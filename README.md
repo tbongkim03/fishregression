@@ -11,6 +11,9 @@
 - [x] run jupyter notebook OR vscode ipynb 확장자 파일 만들어 열어 보고 구동 확인
 - [x] github push
 
+![image](https://github.com/user-attachments/assets/11b79446-af3f-469f-914d-0f434a52d597)
+
+
 ## 0.2.0 reg
 - test.ipynb 에서
 - 회귀분석 연습
@@ -28,9 +31,12 @@ ValueError: Expected 2D array, got 1D array instead:
 -1은 행의 수가 -1개라는 건가? 무슨의미?
 답 : 남은 배열의 길이와 남은 차원으로부터 추정해서 알아서 행을 지정 [출처](https://yololife-sy.medium.com/python-reshape-1-1-%EC%97%90%EC%84%9C-1%EC%9D%98-%EC%9D%98%EB%AF%B8-97b713be5230)
 
-- 알게된 KNR의 문제점
-길이 데이터를 기반으로 무게 예측하는 방법이 k값 근처 데이터틀의 평균값으로 예측함.
+![image](https://github.com/user-attachments/assets/82dfc98d-a8aa-4a25-985e-3ab0e54b1f17)
 
+
+- 알게된 KNR의 문제점
+
+길이 데이터를 기반으로 무게 예측하는 방법이 k값 근처 데이터틀의 평균값으로 예측함.
 따라서 미리 준비된 데이터의 범위와 상당히 떨어져 있으면 일정 길이(수치) 이상부터는 모두 같은 무게로 귀결됨.
 
 ```python
