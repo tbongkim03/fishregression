@@ -57,3 +57,32 @@ ValueError: Expected 2D array, got 1D array instead:
 50
 [[1033.33333333]]
 ```
+
+### 0.3.0 linear
+- linear regression
+- import
+```python
+from sklearn.linear_model import LinearRegression
+```
+
+- how to
+```python
+#X는 2차원 배열 train_input
+#y는 배열 train_target
+reg = LinearRegression().fit(X, y)
+```
+
+- 직선의 방정식
+y = A(기울기 = 계수) * X(값 = 여기서는 생선의 길이) + B(y 절편)
+
+```python
+A = reg.coef_ # 계수
+B = reg.intercept_ #y 절편, 독립항
+```
+- 직선 그래프에 나타내기
+```python
+plt.plot(<[시작할X, 마지막X]>, <[시작할y, 마지막y]>, linewidth=3)
+
+- 문제점 X, y 범위 지정하기 어려움
+
+해결방법 : 시작할 점 == 최소값 min(), 마지막 점 == 최대값 max()
