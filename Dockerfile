@@ -5,7 +5,7 @@ FROM datamario24/python311scikitlearn-fastapi:1.0.0
 
 WORKDIR /code
 
-COPY src/fishmlserv/main.py /code/
+COPY src/fishregression/main.py /code/
 
 RUN pip install --no-cache-dir --upgrade git+https://github.com/tbongkim03/fishregression.git@0.5.0/cli
 
