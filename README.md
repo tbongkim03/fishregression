@@ -89,3 +89,30 @@ plt.plot(<[시작할X, 마지막X]>, <[시작할y, 마지막y]>, linewidth=3)
 
 해결방법 : 시작할 점 == 최소값 min(), 마지막 점 == 최대값 max()
 ![image](https://github.com/user-attachments/assets/b4b485f6-19f2-4367-84b3-fc414e03925c)
+
+### 0.4.0 poly
+- poly regression
+- 다항식 : weight = A * (length)^2 + B * length + C
+- A, B, C ?
+```python
+A = lr.coef_[0]
+B = lr.coef_[1]
+C = lr.intercept_
+```
+- 곡선 그래프에 나타내기
+- sol1
+```python
+points = np.arange(0,51)
+plt.plot(points, (A * points**2) + (B * points) + C, color="red")
+```
+- sol2
+```python
+x_values = np.linspace(min(train_input), max(train_input), 100)
+y_values = A * x_values ** 2 + B * x_values + C
+plt.plot(x_values, y_values, color='red')
+```
+- 문제점 
+
+np.arange(x_0, x_1)을 이용하여 범위를 지정할 경우
+데이터에 존재하는 최소값을 지나쳐서 반대쪽도 선이 그어지기 때문에 문제 발생
+
