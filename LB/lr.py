@@ -27,13 +27,15 @@ def lr_api(length):
 
     # 다항회귀에서 예측불가능한 극점 반대부분 예외처리
 
+    x = symbols('x')
+
     A = lr.coef_[0]
     B = lr.coef_[1]
     C = lr.intercept_
 
-    fx = A * length**2 + B * length + C
-    dydx = Derivative(fx, length).doit()
-    dydx0 = solve(dydx)
+    fx = A * x**2 + B * x + C
+    dfx = diff(fx, x)
+    dydx0 = solve(dfx, x)
 
     with open("model.pkl", "wb") as f:
         pickle.dump(lr, f)
