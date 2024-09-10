@@ -132,3 +132,5 @@ $ sudo docker exec -it fishapi pp
 물고기의 길이를 입력하세요: 40
 🐟 길이 40.0에 무게 876.665인 물고기는 도미로 예측됩니다!
 ```
+- 도커 허브
+[Docker image link](https://hub.docker.com/r/tbongkim03/fishregression)
