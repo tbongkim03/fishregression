@@ -1,14 +1,29 @@
 def predict():
-    from fishregression.api.lr import lr_api
-    from fishregression.api.knn import knn_api
+    #from fishregression.api.lr import lr_api
+    #from fishregression.api.knn import knn_api
+    import requests as r
+    
+    your_ec2_ipv4 = input("""물고기 api에 접속할 주소를 입력하세요
+(해당 주소에 api가 도커 컨테이너가 실행되어있어야합니다. 포트는 8080):""")
+    base_url = f"http://{your_ec2_ipv4}:8080/"
     length = float(input("물고기의 길이를 입력하세요: "))
+    length_url = f"{base_url}lr"
+    params = {'l': length}  
+    response = r.get(length_url, params=params)
+    l = response.json()
 
     ## weight 예측 선형회귀 API 호출
-    weight = lr_api(length)
+    weight = l.get('weight')
+    if l.get('dydx0'):
+        length = dydx0
+        weight = l.get('dydx0')+99999.99999 # 고유 식별
 
     ## 물고기 분류 API 호출
-    fish_class = knn_api(length, weight)
+    fish_url = f"{base_url}knn"
+    params = {'w': weight, 'l': length}
+    response = r.get(fish_url, params=params)
+    f = response.json()
+    fish_class = f.get('result')
 
     ## 출력
-    print(f"🐟 길이 {length}에 무게 {weight}인 물고기는 {fish_class}로 예측됩니다!")
-
+    print(fish_class)
