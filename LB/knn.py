@@ -1,4 +1,4 @@
-def knn_api(length, weight):
+def knn_api(length, weighti, dydx0):
     import numpy as np
     from sklearn.neighbors import KNeighborsClassifier
     import pickle
@@ -29,9 +29,10 @@ def knn_api(length, weight):
     # 예외처리 확인
     if weight > 99999:
         weight = weight - 99999.99999
+        
         e = 1
         
-    knn_p = fish_knn.predict([[length,weight]])
+    knn_p = fish_knn.predict([[dydx0,weight]])
     fish_type = "빙어"
     if int(knn_p[0]) == 1:
         fish_type = "도미"
