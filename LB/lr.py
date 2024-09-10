@@ -4,7 +4,7 @@ def lr_api(length):
     from sklearn.linear_model import LinearRegression
     import pickle
     import os
-    from sympy import *
+    from sympy import Derivative, solve
 
     fish_length = np.array([25.4, 26.3, 26.5, 29.0, 29.0, 29.7, 29.7, 30.0, 30.0, 30.7, 31.0, 31.0,
         31.5, 32.0, 32.0, 32.0, 33.0, 33.0, 33.5, 33.5, 34.0, 34.0, 34.5, 35.0,
