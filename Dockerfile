@@ -7,6 +7,6 @@ WORKDIR /code
 
 COPY src/fishregression/main.py /code/
 
-RUN pip install --no-cache-dir --upgrade git+https://github.com/tbongkim03/fishregression.git@0.5.0/cli
+RUN pip install --no-cache-dir --upgrade git+https://github.com/tbongkim03/fishregression.git@0.6.0/s3
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
