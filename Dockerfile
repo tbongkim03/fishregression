@@ -5,7 +5,9 @@ FROM datamario24/python311scikitlearn-fastapi:1.0.0
 
 WORKDIR /code
 
-COPY src/fishregression/main.py /code/
+COPY LB/main.py /code/
+COPY LB/lr.py /code/fishregression/api/
+COPY LB/knn.py /code/fishregression/api/
 
 RUN pip install --no-cache-dir --upgrade git+https://github.com/tbongkim03/fishregression.git@0.6.0/s3
 
