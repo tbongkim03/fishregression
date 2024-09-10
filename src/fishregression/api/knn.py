@@ -1,4 +1,4 @@
-def knn_api(length, weight):
+def knn_api(length, weight, dydx0):
     import numpy as np
     from sklearn.neighbors import KNeighborsClassifier
     import pickle
@@ -19,14 +19,23 @@ def knn_api(length, weight):
     kn = KNeighborsClassifier(n_neighbors=5)
     kn.fit(fish_data, fish_target)
 
-    with open("knn_model.pkl", "wb") as f:
+    with open("model.pkl", "wb") as f:
         pickle.dump(kn, f)
 
-    with open("knn_model.pkl", "rb") as f:
+    with open("model.pkl", "rb") as f:
         fish_knn = pickle.load(f)
-
-    knn_p = fish_knn.predict([[length,weight]])
+    
+    e=0
+    # 예외처리 확인
+    if weight > 9999:
+        print(f"크다{weight}")
+        re_weight = round(weight - 99999.99999, 3)
+        print(f"작다{weight}")
+        knn_p = fish_knn.predict([[dydx0,re_weight]])
+        e = 1
+    else:
+        knn_p = fish_knn.predict([[length,weight]])
     fish_type = "빙어"
     if int(knn_p[0]) == 1:
         fish_type = "도미"
-    return fish_type
+    return fish_type, e

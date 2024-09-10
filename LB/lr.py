@@ -49,4 +49,7 @@ def lr_api(length):
     else:
         lr_w = fish_lr.predict([[dydx0 ** 2, length]])
         weight = round(float(lr_w[0]), 3)
-    return weight, dydx0
+    #return weight, dydx0
+    return weight, 1.0
+
+lr_api(40)

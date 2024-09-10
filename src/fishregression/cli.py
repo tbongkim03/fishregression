@@ -17,8 +17,7 @@ def predict():
     print("*"*100)
     ## weight 예측 선형회귀 API 호출
     weight = l.get('weight')
-    if l.get('dydx0'):
-        weight = l.get('dydx0') + 99999.99999 # 고유 식별
+    dydx0 = l.get('dydx0')
 
     ## 물고기 분류 API 호출
     fish_url = f"{base_url}knn"
