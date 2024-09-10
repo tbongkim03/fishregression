@@ -1,8 +1,6 @@
 from typing import Union
-#from fishregression.api.lr import lr_api
-from lr import lr_api
-from knn import knn_api
-#from fishregression.api.knn import knn_api
+from fishregression.api.lr import lr_api
+from fishregression.api.knn import knn_api
 from fastapi import FastAPI
 
 app = FastAPI()
