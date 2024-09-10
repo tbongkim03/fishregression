@@ -132,3 +132,16 @@ $ sudo docker exec -it fishapi pp
 물고기의 길이를 입력하세요: 40
 🐟 길이 40.0에 무게 876.665인 물고기는 도미로 예측됩니다!
 ```
+
+### 0.6.0 s3
+- 하나의 물고기 데이터를 이용하여 선형회귀, knn 알고리즘 학습
+- LOAD BALANCING 을 이용하여 api별 포트관리
+- 데이터 범위 바깥의 데이터가 다항함수 극값보다 벗어날 경우 경고 문구와 극값에 따른 최소값 출력
+- Docker를 이용한 Fastapi 파이썬 서버 활용
+
+![image](https://github.com/user-attachments/assets/bbcf08f4-ea42-41ec-9e6a-e279dbee2b7f)
+![image](https://github.com/user-attachments/assets/135e31cc-4017-4bf8-927c-75865f0b331f)
+![image](https://github.com/user-attachments/assets/547dcb90-610c-47b9-99fc-e4e0521b008e)
+
+
+
