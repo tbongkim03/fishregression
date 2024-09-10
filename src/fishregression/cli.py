@@ -10,11 +10,7 @@ def predict():
     length_url = f"{base_url}lr"
     params = {'l': length}
     response = r.get(length_url, params=params)
-    print(response.text)
     l = response.json()
-    print("*"*100)
-    print(response.text)
-    print("*"*100)
     ## weight 예측 선형회귀 API 호출
     weight = l.get('weight')
     dydx0 = l.get('dydx0')
