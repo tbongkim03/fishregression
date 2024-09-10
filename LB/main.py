@@ -12,8 +12,8 @@ def read_root():
 
 
 @app.get("/knn")
-def read_item(w: float, l: float):
-    fish_class, e = knn_api(l, w)
+def read_item(w: float, l: float, dydx0: float):
+    fish_class, e = knn_api(l, w, dydx0)
     if e == 0:
         result_msg = f"🐟 길이 {l}에 무게 {w}인 물고기는 {fish_class}로 예측됩니다!"
     else:
@@ -23,5 +23,5 @@ def read_item(w: float, l: float):
 
 @app.get("/lr")
 def read_item(l: float):
-    weight = lr_api(l)
-    return {"weight": weight}
+    weight, dydx0 = lr_api(l)
+    return {"weight": weight, "dydx0": dydx0}
