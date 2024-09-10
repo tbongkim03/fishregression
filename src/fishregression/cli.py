@@ -8,19 +8,18 @@ def predict():
     base_url = f"http://{your_ec2_ipv4}:8080/"
     length = float(input("물고기의 길이를 입력하세요: "))
     length_url = f"{base_url}lr"
-    params = {'l': length}  
+    params = {'l': length}
     response = r.get(length_url, params=params)
     l = response.json()
 
     ## weight 예측 선형회귀 API 호출
     weight = l.get('weight')
     if l.get('dydx0'):
-        length = dydx0
-        weight = l.get('dydx0')+99999.99999 # 고유 식별
+        weight = l.get('dydx0') + 99999.99999 # 고유 식별
 
     ## 물고기 분류 API 호출
     fish_url = f"{base_url}knn"
-    params = {'w': weight, 'l': length}
+    params = {'w': weight, 'l': length, 'dydx0': dydx0}
     response = r.get(fish_url, params=params)
     f = response.json()
     fish_class = f.get('result')
