@@ -5,7 +5,7 @@ FROM datamario24/python311scikitlearn-fastapi:1.0.0
 
 WORKDIR /code
 
-COPY LB/main.py /code/
+COPY src/fishregression/main.py /code/
 COPY src/fishregression/api/lr.py /code/fishregression/api/
 COPY src/fishregression/api/knn.py /code/fishregression/api/
 
