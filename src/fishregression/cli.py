@@ -7,7 +7,7 @@ def predict():
 (해당 주소에 api가 도커 컨테이너가 실행되어있어야합니다. 포트는 8080):""")
     base_url = f"http://{your_ec2_ipv4}:8080/"
     length = float(input("물고기의 길이를 입력하세요: "))
-    length_url = f"{base_url}lr"
+    length_url = f"{base_url}weight/lr"
     params = {'l': length}
     response = r.get(length_url, params=params)
     l = response.json()
@@ -16,7 +16,7 @@ def predict():
     dydx0 = l.get('dydx0')
 
     ## 물고기 분류 API 호출
-    fish_url = f"{base_url}knn"
+    fish_url = f"{base_url}fish/knn"
     params = {'w': weight, 'l': length, 'dydx0': dydx0}
     response = r.get(fish_url, params=params)
     f = response.json()
