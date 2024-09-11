@@ -141,6 +141,7 @@ $ sudo docker exec -it fishapi pp
 
 ![image](https://github.com/user-attachments/assets/bbcf08f4-ea42-41ec-9e6a-e279dbee2b7f)
 ![image](https://github.com/user-attachments/assets/135e31cc-4017-4bf8-927c-75865f0b331f)
+![image](https://github.com/user-attachments/assets/e08d78a2-8575-4d8f-9f46-fb2db6b246ce)
 
 
 
