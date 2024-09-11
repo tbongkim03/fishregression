@@ -11,7 +11,7 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/knn")
+@app.get("/fish/knn")
 def read_item(w: float, l: float):
     global dydx0
     fish_class, e = knn_api(l, w, dydx0)
@@ -22,7 +22,7 @@ def read_item(w: float, l: float):
     return {"result": result_msg}
 
 
-@app.get("/lr")
+@app.get("/weight/lr")
 def read_item(l: float):
     global dydx0
     weight, dydx0 = lr_api(l)
