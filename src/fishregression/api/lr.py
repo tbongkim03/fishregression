@@ -46,7 +46,6 @@ def lr_api(length):
     if length < dydx0 or length > max(train_input):
         lr_w = fish_lr.predict([[dydx0**2, dydx0]])
         weight = round(float(lr_w[0]), 3)
-        print(weight)
         weight = weight + 99999.99999
     else:
         lr_w = fish_lr.predict([[length**2, length]])

@@ -28,9 +28,7 @@ def knn_api(length, weight, dydx0):
     e=0
     # 예외처리 확인
     if weight > 9999:
-        print(f"크다{weight}")
         re_weight = round(weight - 99999.99999, 3)
-        print(f"작다{weight}")
         knn_p = fish_knn.predict([[dydx0,re_weight]])
         e = 1
     else:
