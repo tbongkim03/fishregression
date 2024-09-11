@@ -26,4 +26,4 @@ def read_item(w: float, l: float):
 def read_item(l: float):
     global dydx0
     weight, dydx0 = lr_api(l)
-    return {"weigtbongkim03/fish-lb:0.6.2ht": weight, "dydx0": dydx0}
+    return {"weight": weight, "dydx0": dydx0}
